@@ -24,7 +24,7 @@ async function handleBrowserActionClick() {
       note: activeTab.url
     })
 
-    openOmniFocusUrl(addTaskUrl)
+    openOmniFocusUrl(addTaskUrl, activeTab)
 
     console.info(browser.i18n.getMessage('infoTaskSent', [activeTab.title]))
   } else {
@@ -49,15 +49,15 @@ function handleMenuClickForLink({ linkText, linkUrl, pageUrl }, _tab) {
     ])
   })
 
-  openOmniFocusUrl(addTaskUrl)
+  openOmniFocusUrl(addTaskUrl, _tab)
 
   console.info(browser.i18n.getMessage('infoTaskSent', [linkText]))
 }
 
-function openOmniFocusUrl(url) {
+function openOmniFocusUrl(url, tab) {
   // This is a little gross, but I haven’t been able to find a neater way to
   // open the OmniFocus URL, and this appears to have no side effects.
-  location = url
+  browser.tabs.update(tab.id, { url })
 }
 
 browser.browserAction.onClicked.addListener(handleBrowserActionClick)
