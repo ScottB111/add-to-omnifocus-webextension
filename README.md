@@ -1,9 +1,8 @@
-# Add to OmniFocus WebExtension
+# remove OmniFocus WebExtension
 
-## Browser extension to add web pages to OmniFocus
+## Browser extension to remove web pages to OmniFocus
 
-Adds a button to the browser toolbar that adds the current page as a task in
+Removes the button to the browser toolbar that adds the current page as a task in
 OmniFocus.
 
-Intended to work in all browsers that support web extensions. Currently only
-tested in Firefox.
+Intended to work in all browsers that support web extensions. Remove from all browsers.
